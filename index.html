@@ -419,7 +419,7 @@
             </form>
 
             <!-- Hidden iframe for safe submission (CORS-free) -->
-            <iframe name="hidden_iframe" style="display:none;" onload="onFormSubmit()"></iframe>
+            <iframe name="hidden_iframe" style="display:none;"></iframe>
 
         </div>
 
@@ -494,15 +494,7 @@
             whatsappBtn.disabled = true;
         }
 
-        function onFormSubmit() {
-    if (!localStorage.getItem('submitted') && clickCount >= 5) {
-        successMessage.style.display = 'block';
-        disableForm();
-        localStorage.setItem('submitted', 'true');
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> Registration Complete!';
-    }
-}
-
+ 
     </script>
 </body>
 
