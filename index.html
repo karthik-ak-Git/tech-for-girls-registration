@@ -419,7 +419,8 @@
             </form>
 
             <!-- Hidden iframe for safe submission (CORS-free) -->
-            <iframe name="hidden_iframe" style="display:none;"></iframe>
+            <iframe name="hidden_iframe" style="display:none;" onload="onFormSubmit()"></iframe>
+
 
         </div>
 
@@ -493,6 +494,15 @@
             form.querySelectorAll("input, select, button").forEach(el => el.disabled = true);
             whatsappBtn.disabled = true;
         }
+        function onFormSubmit() {
+    // Only run if form was submitted and localStorage is not yet marked
+    if (!localStorage.getItem('submitted') && clickCount >= 5) {
+        successMessage.style.display = 'block';
+        disableForm();
+        localStorage.setItem('submitted', 'true');
+        submitBtn.innerHTML = '<i class="fas fa-check"></i> Registration Complete!';
+    }
+}
 
  
     </script>
