@@ -435,10 +435,11 @@
     let clickCount = 0;
     const maxClicks = 5;
 
-    if (localStorage.getItem('submitted')) {
+    if (sessionStorage.getItem('submitted')) {
       disableForm();
       successMessage.style.display = 'block';
     }
+
 
     whatsappBtn.addEventListener('click', () => {
       if (clickCount < maxClicks) {
@@ -509,7 +510,7 @@
           if (data.includes("Success")) {
             successMessage.style.display = 'block';
             disableForm();
-            localStorage.setItem('submitted', 'true');
+            sessionStorage.setItem('submitted', 'true');
             submitBtn.innerHTML = '<i class="fas fa-check"></i> Registration Complete!';
           } else {
             alert("Something went wrong");
