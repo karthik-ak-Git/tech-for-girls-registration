@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tech For Girls - Registration</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <style>
-        :root {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech For Girls - Registration</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
             --primary: #6a11cb;
             --secondary: #2575fc;
             --accent: #ff4e8d;
@@ -345,167 +345,187 @@
                 padding: 20px;
             }
         }
-    </style>
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1><i class="fas fa-laptop-code"></i> Tech For Girls</h1>
-            <p class="subtitle">Join our community of women in technology and empower your future</p>
-        </header>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-laptop-code"></i> Tech For Girls</h1>
+      <p class="subtitle">Join our community of women in technology and empower your future</p>
+    </header>
 
-        <div class="form-container">
-            <form id="registrationForm"
-                action="https://script.google.com/macros/s/AKfycbwwVDnNYPuqRDXv-yHtdy2JYW874PyVR1KXt99oy6yN6Z2NdDQZLRNzrBOpIyOTxFjb4Q/exec"
-                method="POST" enctype="multipart/form-data" target="hidden_iframe">
-
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" name="name" required />
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" name="phone" pattern="\d{10}" required />
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" name="email" required />
-                </div>
-
-                <div class="form-group">
-                    <label for="college">College/Department</label>
-                    <select name="college" required>
-                        <option value="" disabled selected>Select your college</option>
-                        <option value="Engineering">Engineering</option>
-                        <option value="Computer Science">Computer Science</option>
-                        <option value="Information Technology">Information Technology</option>
-                        <option value="Design">Design</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-
-                <div class="whatsapp-container">
-                    <p>Help us grow our community! Share with 5 friends</p>
-                    <button type="button" id="whatsappBtn" class="whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i> Share on WhatsApp
-                    </button>
-                    <div class="counter" id="counter">Click count: 0/5</div>
-                </div>
-
-                <div class="form-group">
-                    <label for="screenshot">Upload Screenshot</label>
-                    <div class="file-upload" id="fileUpload">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                        <p>Click to upload screenshot (JPG, PNG, PDF - Max 5MB)</p>
-                        <input type="file" name="screenshot" id="screenshot" accept=".jpg,.jpeg,.png,.pdf" style="display: none;" />
-                    </div>
-                    <div class="preview-container" id="previewContainer">
-                        <img id="previewImage" src="" alt="Preview" />
-                    </div>
-                </div>
-
-                <button type="submit" id="submitBtn" class="submit-btn" disabled>
-                    <i class="fas fa-paper-plane"></i> Register Now
-                </button>
-
-                <div class="success-message" id="successMessage">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>🎉 Your submission has been recorded!</h3>
-                    <p>Thanks for being part of Tech for Girls!</p>
-                </div>
-            </form>
-
-            <!-- Hidden iframe for safe submission (CORS-free) -->
-            <iframe name="hidden_iframe" style="display:none;" onload="onFormSubmit()"></iframe>
-
-
+    <div class="form-container">
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required />
         </div>
 
-        <footer>
-            <p>Empowering women in technology &copy; 2025 Tech For Girls</p>
-        </footer>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" pattern="\d{10}" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="college">College/Department</label>
+          <select id="college" required>
+            <option value="" disabled selected>Select your college</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Design">Design</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="whatsapp-container">
+          <p>Help us grow our community! Share with 5 friends</p>
+          <button type="button" id="whatsappBtn" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Share on WhatsApp
+          </button>
+          <div class="counter" id="counter">Click count: 0/5</div>
+        </div>
+
+        <div class="form-group">
+          <label for="screenshot">Upload Screenshot</label>
+          <div class="file-upload" id="fileUpload">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Click to upload screenshot (JPG, PNG, PDF - Max 5MB)</p>
+            <input type="file" id="screenshot" accept=".jpg,.jpeg,.png,.pdf" style="display: none;" required />
+          </div>
+          <div class="preview-container" id="previewContainer">
+            <img id="previewImage" src="" alt="Preview" />
+          </div>
+        </div>
+
+        <button type="submit" id="submitBtn" class="submit-btn" disabled>
+          <i class="fas fa-paper-plane"></i> Register Now
+        </button>
+
+        <div class="success-message" id="successMessage">
+          <i class="fas fa-check-circle"></i>
+          <h3>🎉 Your submission has been recorded!</h3>
+          <p>Thanks for being part of Tech for Girls!</p>
+        </div>
+      </form>
     </div>
 
-    <script>
-        const whatsappBtn = document.getElementById('whatsappBtn');
-        const counter = document.getElementById('counter');
-        const submitBtn = document.getElementById('submitBtn');
-        const successMessage = document.getElementById('successMessage');
-        const form = document.getElementById('registrationForm');
-        const fileInput = document.getElementById('screenshot');
-        const fileUpload = document.getElementById('fileUpload');
-        const previewContainer = document.getElementById('previewContainer');
-        const previewImage = document.getElementById('previewImage');
+    <footer>
+      <p>Empowering women in technology &copy; 2025 Tech For Girls</p>
+    </footer>
+  </div>
 
-        let clickCount = 0;
-        const maxClicks = 5;
+  <script>
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    const counter = document.getElementById('counter');
+    const submitBtn = document.getElementById('submitBtn');
+    const successMessage = document.getElementById('successMessage');
+    const form = document.getElementById('registrationForm');
+    const fileInput = document.getElementById('screenshot');
+    const fileUpload = document.getElementById('fileUpload');
+    const previewContainer = document.getElementById('previewContainer');
+    const previewImage = document.getElementById('previewImage');
 
-        if (localStorage.getItem('submitted')) {
-            disableForm();
+    let clickCount = 0;
+    const maxClicks = 5;
+
+    if (localStorage.getItem('submitted')) {
+      disableForm();
+      successMessage.style.display = 'block';
+    }
+
+    whatsappBtn.addEventListener('click', () => {
+      if (clickCount < maxClicks) {
+        window.open("https://wa.me/?text=" + encodeURIComponent("Hey Buddy, Join Tech For Girls Community!"), "_blank");
+        clickCount++;
+        counter.textContent = `Click count: ${clickCount}/5`;
+
+        if (clickCount === maxClicks) {
+          counter.innerHTML = "<strong>Sharing complete. Please continue.</strong>";
+          whatsappBtn.disabled = true;
+          whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Sharing Complete!';
+          submitBtn.disabled = false;
+        }
+      }
+    });
+
+    fileUpload.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', function () {
+      if (this.files && this.files[0]) {
+        const file = this.files[0];
+        if (file.type.match("image.*")) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            previewImage.src = e.target.result;
+            previewContainer.style.display = "block";
+          };
+          reader.readAsDataURL(file);
+        } else {
+          previewImage.src = "https://cdn-icons-png.flaticon.com/512/337/337946.png";
+          previewContainer.style.display = "block";
+        }
+      }
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const college = document.getElementById("college").value;
+      const file = fileInput.files[0];
+
+      const reader = new FileReader();
+      reader.onload = async function () {
+        const base64 = reader.result;
+
+        const formData = new URLSearchParams();
+        formData.append("name", name);
+        formData.append("phone", phone);
+        formData.append("email", email);
+        formData.append("college", college);
+        formData.append("screenshot", base64);
+        formData.append("fileType", file.type);
+        formData.append("fileName", file.name);
+
+        try {
+          const res = await fetch("YOUR_DEPLOYED_SCRIPT_EXEC_URL", {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formData
+          });
+
+          const data = await res.text();
+
+          if (data.includes("Success")) {
             successMessage.style.display = 'block';
+            disableForm();
+            localStorage.setItem('submitted', 'true');
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Registration Complete!';
+          } else {
+            alert("Something went wrong");
+          }
+        } catch (err) {
+          alert("Error submitting form: " + err);
         }
+      };
+      reader.readAsDataURL(file);
+    });
 
-        whatsappBtn.addEventListener('click', () => {
-            if (clickCount < maxClicks) {
-                window.open("https://wa.me/?text=" + encodeURIComponent("Hey Buddy, Join Tech For Girls Community!"), "_blank");
-                clickCount++;
-                counter.textContent = `Click count: ${clickCount}/5`;
-
-                if (clickCount === maxClicks) {
-                    counter.innerHTML = "<strong>Sharing complete. Please continue.</strong>";
-                    whatsappBtn.disabled = true;
-                    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Sharing Complete!';
-                    submitBtn.disabled = false;
-                }
-            }
-        });
-
-        fileUpload.addEventListener('click', () => fileInput.click());
-        fileInput.addEventListener('change', function () {
-            if (this.files && this.files[0]) {
-                const file = this.files[0];
-                if (file.type.match("image.*")) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        previewImage.src = e.target.result;
-                        previewContainer.style.display = "block";
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    previewImage.src = "https://cdn-icons-png.flaticon.com/512/337/337946.png";
-                    previewContainer.style.display = "block";
-                }
-            }
-        });
-
-        function onFormSubmit() {
-            if (!localStorage.getItem('submitted') && clickCount >= maxClicks) {
-                successMessage.style.display = 'block';
-                disableForm();
-                localStorage.setItem('submitted', 'true');
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Registration Complete!';
-            }
-        }
-
-        function disableForm() {
-            form.querySelectorAll("input, select, button").forEach(el => el.disabled = true);
-            whatsappBtn.disabled = true;
-        }
-        function onFormSubmit() {
-    // Only run if form was submitted and localStorage is not yet marked
-            if (!localStorage.getItem('submitted') && clickCount >= 5) {
-                successMessage.style.display = 'block';
-                disableForm();
-                localStorage.setItem('submitted', 'true');
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Registration Complete!';
-            }
-        }
-
- 
-    </script>
+    function disableForm() {
+      form.querySelectorAll("input, select, button").forEach(el => el.disabled = true);
+      whatsappBtn.disabled = true;
+    }
+  </script>
 </body>
 
 </html>
