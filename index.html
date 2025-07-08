@@ -496,13 +496,13 @@
         }
         function onFormSubmit() {
     // Only run if form was submitted and localStorage is not yet marked
-    if (!localStorage.getItem('submitted') && clickCount >= 5) {
-        successMessage.style.display = 'block';
-        disableForm();
-        localStorage.setItem('submitted', 'true');
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> Registration Complete!';
-    }
-}
+            if (!localStorage.getItem('submitted') && clickCount >= 5) {
+                successMessage.style.display = 'block';
+                disableForm();
+                localStorage.setItem('submitted', 'true');
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Registration Complete!';
+            }
+        }
 
  
     </script>
