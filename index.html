@@ -496,7 +496,7 @@
         formData.append("fileName", file.name);
 
         try {
-          const res = await fetch("YOUR_DEPLOYED_SCRIPT_EXEC_URL", {
+          const res = await fetch("https://script.google.com/macros/s/AKfycbwwVDnNYPuqRDXv-yHtdy2JYW874PyVR1KXt99oy6yN6Z2NdDQZLRNzrBOpIyOTxFjb4Q/exec", {
             method: "POST",
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
