@@ -493,6 +493,16 @@
             form.querySelectorAll("input, select, button").forEach(el => el.disabled = true);
             whatsappBtn.disabled = true;
         }
+
+        function onFormSubmit() {
+    if (!localStorage.getItem('submitted') && clickCount >= 5) {
+        successMessage.style.display = 'block';
+        disableForm();
+        localStorage.setItem('submitted', 'true');
+        submitBtn.innerHTML = '<i class="fas fa-check"></i> Registration Complete!';
+    }
+}
+
     </script>
 </body>
 
